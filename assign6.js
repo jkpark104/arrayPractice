@@ -6,7 +6,7 @@ let todos = [
 
 const toggleCompletedById = (todos, id) =>
   todos.map(el => {
-    if (el.id === id) todos.completed = !todos.completed;
+    if (el.id === id) el.completed = !el.completed;
     return el;
   });
 todos = toggleCompletedById(todos, 2);
