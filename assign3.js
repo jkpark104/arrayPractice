@@ -1,15 +1,13 @@
 let todos = [
   { id: 3, content: 'HTML', completed: false },
   { id: 2, content: 'CSS', completed: true },
-  { id: 1, content: 'Javascript', completed: false }
+  { id: 1, content: 'Javascript', completed: false },
 ];
 
-// const sortBy = (todos, key) => {
-//   /* Do something */
-// };
-const sortBy = (todos, key) => [
-  ...todos.sort((a, b) => (a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0))
-];
+const sortBy = (todos, key) =>
+  [...todos].sort((todo1, todo2) =>
+    todo1[key] > todo2[key] ? 1 : todo1[key] < todo2[key] ? -1 : 0
+  );
 
 todos = sortBy(todos, 'id');
 console.log(todos);
